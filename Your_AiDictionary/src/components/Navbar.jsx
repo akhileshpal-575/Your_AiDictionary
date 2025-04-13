@@ -49,6 +49,7 @@ const Navbar = () => {
   Please format the response clearly and concisely using markdown. The word is: **${word}**`,
       });
       setResult(response.text);
+      setHistory((prev) => [{ word, output: response.text }, ...prev]);
     } catch (error) {
       console.error("Error fetching data:", error);
       setResult("Error fetching data. Please try again.");
